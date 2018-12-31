@@ -1,5 +1,7 @@
 This little utility is supposed to make it a little easier to manage Windows Defender file exclusions.
 
+![Preview](https://i.imgur.com/0cZvCLl.png)
+
 # Features
 * Select Files via. FileOpenDialog
 * Drag & Drop file into the window
