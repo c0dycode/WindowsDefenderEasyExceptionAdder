@@ -43,9 +43,9 @@ namespace WindowsDefenderEasyExceptionAdder
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnOpen_Click(object sender, EventArgs e)
         {
-            using(var dialog = new OpenFileDialog())
+            using (var dialog = new OpenFileDialog())
             {
                 dialog.ShowDialog();
                 this.currentPath = dialog.FileName;
