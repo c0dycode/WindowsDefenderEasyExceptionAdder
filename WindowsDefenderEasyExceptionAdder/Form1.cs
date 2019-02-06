@@ -64,7 +64,7 @@ namespace WindowsDefenderEasyExceptionAdder
             {
                 using (PowerShell ps = PowerShell.Create())
                 {
-                    ps.AddScript($"Add-MpPreference -ExclusionPath {this.currentPath}");
+                    ps.AddScript($"Add-MpPreference -ExclusionPath \"{this.currentPath}\"");
                     var result = ps.Invoke();
                 }
             }
@@ -98,6 +98,16 @@ namespace WindowsDefenderEasyExceptionAdder
                 var result = ps.Invoke();
             }
             GetCurrentExclusions();
+        }
+
+        private void btnFolder_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new FolderBrowserDialog())
+            {
+                dialog.ShowDialog();
+                this.currentPath = dialog.SelectedPath;
+                this.tbFilePath.Text = this.currentPath;
+            }
         }
     }
 }
